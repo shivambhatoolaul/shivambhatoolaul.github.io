@@ -1,0 +1,135 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: #fff;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Main section */
+#main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+/* Container flex layout */
+#main .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* stacks on small screens */
+}
+
+/* Profile image */
+.profile img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%; /* clean circle */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Intro text */
+.intro {
+  flex: 1;
+  min-width: 250px;
+}
+
+#main h1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+#main p {
+  font-size: clamp(1rem, 4vw, 2rem);
+  font-family: monospace;
+  color: #228B22; /* leafy green */
+  margin-bottom: 2rem;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #111;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.social-links a img {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  background: #111;
+  color: #fff;
+}
+
+.social-links a:hover img {
+  filter: invert(1); /* makes icons white on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: clamp(0.5rem, 1vw, 0.9rem);
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #eee;
+  }
+
+  .social-links a {
+    color: #eee;
+    border-color: #eee;
+  }
+
+  .social-links a:hover {
+    background: #eee;
+    color: #111;
+  }
+
+  .social-links a img {
+    filter: invert(1); /* light icons in dark mode */
+  }
+
+  .social-links a:hover img {
+    filter: invert(0); /* dark icons on hover */
+  }
+
+  footer {
+    border-top: 1px solid #333;
+  }
+}

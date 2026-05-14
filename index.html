@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shivam bhatoolaul</title>
+  <meta name="description" content="Shivam Bhatoolaul's Personal Website">
+  <meta name="keywords" content="Shivam Bhatoolaul, Software Developer, DevOps Engineer, Portfolio, Minimalist, Resume, Email, GitHub, LinkedIn">
+
+  <link rel="icon" href="assets/icons/logo.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main Section -->
+  <section id="main">
+    <div class="container">
+      <!-- Text Content -->
+      <div class="intro">
+        <h1><b>shivam</b> bhatoolaul📱</h1>
+        <p>&gt; <span id="typed"></span></p>
+
+        <div class="social-links">
+          <a href="https://shivambhatoolaul.github.io/assets/docs/Shivam-Bhatoolaul-s-Resume-October-2025.pdf" target="_blank">
+            <img src="assets/icons/google-docs.svg" alt="resume"> resume
+          </a>
+
+          <a href="mailto:shivambhatoolaul@icloud.com">
+            <img src="assets/icons/mail.svg" alt="email"> e-mail
+          </a>
+
+          <a href="https://github.com/shivambhatoolaul" target="_blank">
+            <img src="assets/icons/github.svg" alt="github"> github
+          </a>
+
+          <a href="https://www.linkedin.com/in/shivambhatoolaul/" target="_blank">
+            <img src="assets/icons/linkedin.svg" alt="linkedin"> linkedin
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 shivam bhatoolaul 🌱 </p>
+  </footer>
+
+  <!-- Lightweight Typed Effect -->
+  <script>
+    const typedText = ["devops.engineer", "rbc[to][developer]", "salesforce.specialist", "python.pro", "golf.noob", "uoft[compsci][alumni][2023]"];
+    let index = 0, charIndex = 0, deleting = false;
+    const typedElement = document.getElementById("typed");
+
+    function type() {
+      const current = typedText[index];
+      if (!deleting) {
+        typedElement.textContent = current.slice(0, ++charIndex);
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(type, 1200);
+          return;
+        }
+      } else {
+        typedElement.textContent = current.slice(0, --charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          index = (index + 1) % typedText.length;
+        }
+      }
+      setTimeout(type, deleting ? 60 : 120);
+    }
+    type();
+  </script>
+</body>
+</html>
+
